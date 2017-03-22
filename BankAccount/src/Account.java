@@ -10,17 +10,17 @@ public class Account {
 		name = nameing;
 		balance = balance1;
 	}
-	
-	public void credit(){//금액 증가
-		System.out.print("Account에 더할 금액을 입력하시오:");		
-		double credit = input.nextDouble();
+
+	public void credit(int name,double credit){//금액 증가										//만들거라면 public void credit(double a) { } 로 만들어둘것을 깜빡했다.
+		//System.out.print("Account에 더할 금액을 입력하시오:");		
+		//double credit = input.nextDouble();
 		System.out.printf("adding $%.2f to account%d balance\n",credit,name);
 		balance = balance + credit;
 	}
 	
-	public void debit(){ //금액 감소
-		System.out.print("Account에 뺼 금액을 입력하시오:");
-		double debit = input.nextDouble();
+	public void debit(int name,double debit){ //금액 감소
+		//System.out.print("Account에 뺼 금액을 입력하시오:");
+		//double debit = input.nextDouble();
 		System.out.printf("subtracting $%.2f from account%d balance\n",debit,name);
 		if(balance>debit){
 			balance = balance - debit;			
@@ -29,7 +29,15 @@ public class Account {
 		}
 	}
 	
-	public void getBalance(){ //밸런스를 출력
+	public double getBalance(){ //밸런스를 출력
+		return balance;
+	}
+	public void printBalance(){ //밸런스를 출력
 		System.out.printf("account%d balance: $%.2f\n",name,balance);		
-	}	
+	}
+	
+	protected void setBalance(double balance){//잔액수정메소드
+		this.balance = balance;
+	}
+
 }
