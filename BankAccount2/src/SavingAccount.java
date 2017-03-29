@@ -15,7 +15,11 @@ public class SavingAccount extends Account {
 	
 	@Override
 	double getWithdrawableAccount() {
-		return balance;
+		if(timeGone>=12){
+			return balance;
+		}else{
+			return 0;
+		}
 	}
 
 	@Override
